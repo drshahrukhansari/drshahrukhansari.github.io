@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+const form = document.getElementById("appointmentForm");
 
-    const form = document.getElementById("appointmentForm");
-
+if (form) {
     form.addEventListener("submit", function (e) {
 
         e.preventDefault();
@@ -13,19 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const problem = document.getElementById("problem").value;
 
         const message =
-`*New Appointment Request*
+`New Appointment Request
 
-👤 Name: ${name}
-📞 Mobile: ${mobile}
-🎂 Age: ${age}
-🏠 Service: ${service}
-🩺 Problem: ${problem}`;
+Name: ${name}
+Mobile: ${mobile}
+Age: ${age}
+Service: ${service}
+Problem: ${problem}`;
 
         const url =
 `https://wa.me/916377289139?text=${encodeURIComponent(message)}`;
 
-        window.open(url, "_blank");
+        window.location.href = url;
 
     });
-
-});
+}
