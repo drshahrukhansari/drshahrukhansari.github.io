@@ -208,40 +208,21 @@ Book Appointment
 
 <form id="appointmentForm">
 
-<input
-type="text"
-placeholder="Patient Name"
-required>
+<input id="name" type="text" placeholder="Patient Name" required>
 
-<input
-type="tel"
-placeholder="Mobile Number"
-required>
+<input id="mobile" type="tel" placeholder="Mobile Number" required>
 
-<input
-type="number"
-placeholder="Age">
+<input id="age" type="number" placeholder="Age">
 
-<select>
-
-<option>
-Home Visit
-</option>
-
-<option>
-Online Consultation
-</option>
-
+<select id="service">
+    <option>Home Visit</option>
+    <option>Online Consultation</option>
 </select>
 
-<textarea
-placeholder="Problem / Condition">
-</textarea>
+<textarea id="problem" placeholder="Problem / Condition"></textarea>
 
-<button>
-
-Send on WhatsApp
-
+<button type="submit">
+    Send on WhatsApp
 </button>
 
 </form>
