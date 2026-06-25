@@ -1,14 +1,18 @@
-document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    e.preventDefault();
+    const form = document.getElementById("appointmentForm");
 
-    let name = document.querySelector('input[placeholder="Patient Name"]').value;
-    let mobile = document.querySelector('input[placeholder="Mobile Number"]').value;
-    let age = document.querySelector('input[placeholder="Age"]').value;
-    let service = document.querySelector('select').value;
-    let problem = document.querySelector('textarea').value;
+    form.addEventListener("submit", function (e) {
 
-    let message =
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const mobile = document.getElementById("mobile").value;
+        const age = document.getElementById("age").value;
+        const service = document.getElementById("service").value;
+        const problem = document.getElementById("problem").value;
+
+        const message =
 `*New Appointment Request*
 
 👤 Name: ${name}
@@ -17,9 +21,11 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
 🏠 Service: ${service}
 🩺 Problem: ${problem}`;
 
-    let whatsappURL =
-    `https://wa.me/916377289139?text=${encodeURIComponent(message)}`;
+        const url =
+`https://wa.me/916377289139?text=${encodeURIComponent(message)}`;
 
-    window.open(whatsappURL, "_blank");
+        window.open(url, "_blank");
+
+    });
 
 });
